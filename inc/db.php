@@ -2,9 +2,9 @@
 
 
 const HOST = "localhost";
-const USER = "ardmoney";
+const USER = "root";
 const BAZA = "ardmoney";
-const PASS = "ardmoney";
+const PASS = "root";
 
 global $connect;
 $connect = new mysqli(HOST, USER, PASS, BAZA);
