@@ -20,8 +20,14 @@ if (!isset($_GET['date'])) {
     $date_blyat = substr($date, 0, -3);
 }
 $year = date('y');
+if($usr['nav_position'] == 1){
+
+    $nav_change = "down_panel dropup";
+} else{
+    $nav_change = "";
+}
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark <?=$nav_change?>" style="padding: 0;">
     <div class="container-fluid" style="background: #00000070;">
         <a class="navbar-brand" href="#"></a>
         <div class="navbar-collapse" id="navbarNavDarkDropdown">
@@ -228,8 +234,115 @@ background: linear-gradient(180deg, rgba(222,252,186,0.8155637254901961) 5%, rgb
             </div>'; 
         }
 
+
+
+
+        // Получение текущего значения nav_position для пользователя
+$user_id = $usr['id']; // Замените на реальный ID пользователя
+$sql = "SELECT nav_position FROM user WHERE id = ?";
+$stmt = $connect->prepare($sql);
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$nav_position = $row['nav_position'];
+
+// Обработка AJAX-запроса при изменении чекбокса
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $new_position = $_POST['position'];
+    $sql = "UPDATE user SET nav_position = ? WHERE id = ?";
+    $stmt = $connect->prepare($sql);
+    $stmt->bind_param("si", $new_position, $user_id);
+    $stmt->execute();
+    echo $new_position;
+    exit;
+}
+
+$connect->close();
+
+
+
+
         // if ($usr['admin_view'] == 0) {
         ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-4">
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="navToggle" <?php echo $nav_position ? 'checked' : ''; ?>>
+            <label class="form-check-label" for="navToggle">Зафиксировать навбар внизу</label>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        function updateNavPosition(fixed) {
+            if (fixed) {
+                $('#mainNav').css({
+                    'position': 'fixed',
+                    'left': '0',
+                    'right': '0',
+                    'bottom': '0',
+                    'z-index': '10'
+                });
+            } else {
+                $('#mainNav').css({
+                    'position': '',
+                    'left': '',
+                    'right': '',
+                    'bottom': '',
+                    'z-index': ''
+                });
+            }
+        }
+
+        // Применяем начальное состояние
+        updateNavPosition(<?php echo $nav_position ? 'true' : 'false'; ?>);
+
+        $('#navToggle').change(function() {
+            var isFixed = $(this).is(':checked');
+            updateNavPosition(isFixed);
+
+            // Отправляем AJAX-запрос для обновления значения в базе данных
+            $.post(window.location.href, { position: isFixed ? 1 : 0 }, function(response) {
+                console.log('Position updated:', response);
+            });
+        });
+    });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
 
 
         <div class="alert alert-success" style="    padding: 0rem 25%;border-radius: 0;" role="alert">

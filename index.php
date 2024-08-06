@@ -23,8 +23,15 @@ if (!isset($_GET['date'])) {
 if ($_GET['status'] == "success") {
     alrt("Монтаж завершен и подвержден!", "success", "2");
 }
+
+if($usr['nav_position'] == 1){
+
+    $nav_change = "down_panel dropup";
+} else{
+    $nav_change = "";
+}
 ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 0;">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark <?=$nav_change?>" style="padding: 0;">
     <div class="container-fluid" style="background: #00000070;">
         <a class="navbar-brand" href="#"></a>
         <div class="navbar-collapse" id="navbarNavDarkDropdown">
