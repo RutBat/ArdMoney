@@ -229,15 +229,23 @@ if ($url == "/result.php") {
 															$chego = "шт.";
 														}
 														echo "<a style = 'color: black; text-decoration: underline;' href = 'edit_mon.php?material_delete=$materials[id]&mon_id=$mon[id]&status=$mon[status]&status_baza=$mon[status_baza]&technik1=$tech1&technik2=$tech2&technik3=$tech3&technik4=$tech4&technik5=$tech5&technik6=$tech6&technik7=$tech7&technik8=$tech8' >$materials[name]  <b style = 'color:red;' >$materials[count] $chego </b><br></a>";
-														$sql_router = "SELECT * FROM `used_router` WHERE `technik` = '" . $usr['fio'] . "'";
-														$used_router_result = mysqli_query($connect, $sql_router);
-														while ($used_router = mysqli_fetch_array($used_router_result)) {
-															if ($materials['name'] == $used_router['router']) {
-																echo "<a style = 'color: black; text-decoration: underline;' href = 'router_spisat.php?router=$materials[name]&adress=$mon[adress]&technik=$usr[fio]&refer=$encodedStr' >На тебе числится <span style = 'color:red;' >$materials[name]</span>, списать?</a> <br>";
-															}
-														}
+														// $sql_router = "SELECT * FROM `used_router` WHERE `technik` = '" . $usr['fio'] . "'";
+														// $used_router_result = mysqli_query($connect, $sql_router);
+														// while ($used_router = mysqli_fetch_array($used_router_result)) {
+														// 	if ($materials['name'] == $used_router['router']) {
+														// 		echo "<a style = 'color: black; text-decoration: underline;' href = 'router_spisat.php?router=$materials[name]&adress=$mon[adress]&technik=$usr[fio]&refer=$encodedStr' >На тебе числится <span style = 'color:red;' >$materials[name]</span>, списать?</a> <br>";
+														// 	}
+														// }
 													}
 												}
+
+
+
+
+
+
+
+												
 												echo "Сумма:<span style='color: green;font-weight: bold;'>$mon[summa]₽ </span>";
 												echo "Каждому:<span style='color: green;font-weight: bold;'>$mon[kajdomu]₽</span>";
 												echo "<br>";
@@ -370,25 +378,32 @@ if ($url == "/result.php") {
 												<?
 												$visible = (!empty($status)) ? "display:none;" : "display:block;";
 												?>
-												<div class="row g-3">
+												<!-- <div class="row g-3">
 													<div class="col-9" style="width: 74%;">
 														<select class="selectpicker form-control dropup" data-dropup-auto="false" style="    background: white;" data-width="100%" data-container="body" title="Материалы" data-hide-disabled="true" data-width="auto" data-live-search="true" name='material' data-size="5">
 															<?
-															$sql = "SELECT * FROM `material` ORDER BY `name`";
-															$results = mysqli_query($connect, $sql);
-															while ($material = mysqli_fetch_array($results)) {
+															//$sql = "SELECT * FROM `material` ORDER BY `name`";
+															//$results = mysqli_query($connect, $sql);
+															//while ($material = mysqli_fetch_array($results)) {
 															?>
-																<option style="color:<?= $material['color'] ?>;font-size: 11pt;" value='<?= $material['name'] ?>'>
-																	<?= $material["name"] ?></option>
+																<option style="color:<?//= $material['color'] ?>;font-size: 11pt;" value='<?//= $material['name'] ?>'>
+																	<?//= $material["name"] ?></option>
 															<?
-															}
+															//}
 															?>
 														</select>
 													</div>
 													<div class="col-3 block">
 														<input name="material_count" class="form-control sub-form-control" style="height:35px;" type="text" placeholder="Количество" aria-label="Количество">
 													</div>
-												</div>
+												</div> -->
+
+
+
+												<?
+
+material_main("material", "material_count");
+?>
 												<hr>
 												<small class='form-text '>Добавить вид работ и количество</small>
 												<style>
@@ -397,6 +412,19 @@ if ($url == "/result.php") {
 														background: #fff;
 													}
 												</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 												<input name="mon_id" type="hidden" value="<?= $id ?>">
 												<input name="summa" type="hidden" value="<?= $row_price_test ?>">
 												<input name="kajdomu" type="hidden" value="<?= $kajdomu ?>">

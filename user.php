@@ -122,10 +122,7 @@ background: linear-gradient(180deg, rgba(222,252,186,0.8155637254901961) 5%, rgb
 
                     ?>
                         <tr>
-                            <td><a style="color: black;
-    font-family: cursive;
-    font-weight: 100;
-    font-size: small;" href="index.php?current_user=<?= $tech['fio'] ?>"><?= $tech['fio'] ?></a></td>
+                            <td><a style="color: black;font-weight: 700;font-size: small;" href="index.php?current_user=<?= $tech['fio'] ?>"><?= $tech['fio'] ?></a></td>
                             <td><?
                                 num_montaj("$tech[fio]", "$month", 2024);
                                 ?></td>

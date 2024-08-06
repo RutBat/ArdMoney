@@ -3,7 +3,7 @@ include "inc/head.php";
 AutorizeProtect();
 access();
 animate();
-if($usr['name'] == 'RutBat'){
+if($_COOKIE['user'] != "RutBat"){
     echo'Тебе тут не место!!!';
     exit;
 }
@@ -47,19 +47,20 @@ if (!isset($_GET['date'])) {
 
 
 
-
-
 <div class="alert alert-danger" role="alert">
-<b><a href="adm_setting.php">Управление пользователями</a></b>
+<b><a href="https://ardmoney.ru:1488">Управление RutVPN</a></b>
+</div>
+<div class="alert alert-success" role="alert">
+<b><a href="https://ardmoney.ru:8888">Управление FastPanel</a></b>
 </div>
 <div class="alert alert-warning" role="alert">
+<b><a href="adm_setting.php">Управление пользователями</a></b>
+</div>
+<div class="alert alert-danger" role="alert">
 <b><a href="adm_vidrabot.php">Управление видами работ</a></b>
 </div>
 <div class="alert alert-success" role="alert">
 <b><a href="rutdown.php">Загрузить АПК</a></b>
-</div>
-<div class="alert alert-success" role="alert">
-<b><a href = "https://ardmoney.ru:1488">VPN панель</a></b>
 </div>
 <div class="alert alert-info" role="alert">
   Бекап сайта <a href="/backup/backup_last.zip" class="alert-link"><img width="32px" src="/img/backup.png" alt=""></a>

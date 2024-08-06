@@ -7,7 +7,6 @@ echo '<body style = "background: #ffffff url(img/background.webp) repeat;">';
 echo '<div class="container-sm">';
 include("inc/navbar.php"); //Навигационный бар
 ?>
-
 <main role="main">
     <div style="min-height: calc(100vh - 9rem);padding: 0 0;    background: #fff;
 " class="jumbotron">

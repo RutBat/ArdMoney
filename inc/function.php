@@ -472,6 +472,61 @@ function date_view($date)
     return $month;
 }
 
+function material_main($vid, $countid)
+{
+    global $connect;
+    ?>
+    <div class="row g-3">
+        <div class="col-9" style="width: 74%;">
+            <select class="selectpicker form-control dropup" style="background: white;" data-width="100%" data-container="body" title="Материалы" data-hide-disabled="true" data-width="auto" data-live-search="true" name='<?= $vid ?>' data-size="7">
+                <?php
+                $sql = "SELECT * FROM `material`  ORDER BY `razdel`";
+                $results = mysqli_query($connect, $sql);
+                $currentRazdel = '';
+
+                while ($material_main = mysqli_fetch_array($results)) {
+                    if ($material_main['razdel'] != $currentRazdel) {
+                        // Начало новой группы (нового раздела)
+                        if ($currentRazdel != '') {
+                            echo '</optgroup>';
+                        }
+                        echo '<optgroup label="' . $material_main["razdel"] . '">';
+                        $currentRazdel = $material_main['razdel'];
+                    }
+                ?>
+                    <option style="color:<?= $material_main['color'] ?>;font-size: 10pt;" data-icon="<?= $material_main['icon'] ?>" value='<?= $material_main['name'] ?>'>
+                        <?= $material_main["name"] ?></option>
+                <?php
+                }
+                // Закрываем последнюю группу
+                if ($currentRazdel != '') {
+                    echo '</optgroup>';
+                }
+                ?>
+            </select>
+        </div>
+        <div class="col-3 block">
+            <input name="<?= $countid ?>" style="
+                                    color: #999;
+                                    border: 1px solid #bfbdbd;
+                                    padding: 1px;
+                                    margin: 5px 0px 1px;
+                                    height:35px;
+                                    background: white;
+    " class="form-control form-control" type="text" placeholder="Количество" aria-label="Количество">
+
+        </div>
+    </div>
+<?
+}
+
+
+
+
+
+
+
+
 function vid_rabot_main($vid, $countid)
 {
     global $connect;
