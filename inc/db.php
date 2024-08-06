@@ -4,7 +4,7 @@
 const HOST = "localhost";
 const USER = "ardmoney";
 const BAZA = "ardmoney";
-const PASS = "64ihufoz";
+const PASS = "ardmoney";
 
 global $connect;
 $connect = new mysqli(HOST, USER, PASS, BAZA);
