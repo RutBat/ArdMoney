@@ -1,0 +1,16 @@
+a{color:#084298;text-decoration:none;}
+body{font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,      "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";}
+.form-text{font-size:80%;font-weight:400;}
+.bg-dark{background:url(https://ardmoney.local/img/bg.webp);}
+.container-sm{padding-right:0;padding-left:0;margin-right:auto;}
+.jumbotron{margin-bottom:0;padding:15% 0;min-height:calc(100vh - 8.5rem);}
+.container-sm{padding-right:0;padding-left:0;margin-right:auto;max-width:950px;}
+.hui:hover{background-color:#8ddbe336;}
+.green_button{background:#445e3b;border-radius:0px;border:2px solid #2c3c26d1;}
+.green_button:hover{background:#3c7029;border-radius:0px;border:2px solid #485841d1;}
+.new_form-check-input:checked{background-color:#445e3b;border-color:#445e3b;}
+.animated{background-position:left top;-webkit-animation-duration:5s;animation-duration:5s;-webkit-animation-fill-mode:both;animation-fill-mode:both;}
+.fadeOut{-webkit-animation-name:fadeOut;animation-name:fadeOut;}
+@media (max-width: 768px){
+.pidaras{width:100%;height:auto;}
+}

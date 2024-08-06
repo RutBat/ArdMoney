@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивный Bootstrap Hero</title>
+    <!-- Подключение Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Подключение шрифта -->
+    <link href="https://fonts.googleapis.com/css?family=Exo:400,700" rel="stylesheet">
+    <!-- Стили для вашего шаблона -->
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      body {
+        font-family: 'Exo', sans-serif;
+        color: white;
+      }
+
+      .context {
+        width: 100%;
+        position: absolute;
+        top: 50vh;
+      }
+
+      .context h1 {
+        text-align: center;
+        color: #fff;
+        font-size: 50px;
+      }
+
+      .area {
+        background: #4e54c8;
+        background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+      }
+
+      .circles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .circles li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 25s linear infinite;
+        bottom: -150px;
+      }
+
+      .circles li:nth-child(1) {
+        left: 25%;
+        width: 80px;
+        height: 80px;
+        animation-delay: 0s;
+      }
+
+      .circles li:nth-child(2) {
+        left: 10%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 2s;
+        animation-duration: 12s;
+      }
+
+      .circles li:nth-child(3) {
+        left: 70%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 4s;
+      }
+
+      .circles li:nth-child(4) {
+        left: 40%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0s;
+        animation-duration: 18s;
+      }
+
+      .circles li:nth-child(5) {
+        left: 65%;
+        width: 20px;
+        height: 20px;
+        animation-delay: 0s;
+      }
+
+      .circles li:nth-child(6) {
+        left: 75%;
+        width: 110px;
+        height: 110px;
+        animation-delay: 3s;
+      }
+
+      .circles li:nth-child(7) {
+        left: 35%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 7s;
+      }
+
+      .circles li:nth-child(8) {
+        left: 50%;
+        width: 25px;
+        height: 25px;
+        animation-delay: 15s;
+        animation-duration: 45s;
+      }
+
+      .circles li:nth-child(9) {
+        left: 20%;
+        width: 15px;
+        height: 15px;
+        animation-delay: 2s;
+        animation-duration: 35s;
+      }
+
+      .circles li:nth-child(10) {
+        left: 85%;
+        width: 150px;
+        height: 150px;
+        animation-delay: 0s;
+        animation-duration: 11s;
+      }
+
+      @keyframes animate {
+        0% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+          border-radius: 0;
+        }
+
+        100% {
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+          border-radius: 50%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Шаблон для фона -->
+    <div class="area">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- Ваш контент -->
+    <div class="container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+      <div class=" row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="text-center" style="color: #92ff01;
+    text-shadow: -1px -1px 10px #237e52, 1px -1px 10px #237e52, -1px 1px 10px #237e52, 1px 1px 10px #237e52;">
+            <h1>В связи с блокировками протоколов интернета пришлось перейти на самый защищенный протокол.</h1>
+            <p>Его невозможно отследить и заблокировать. Он немного режет скорость, но зато будет работать.</p>
+          </div>
+          <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="showContent('windows')">Windows</button>
+            <button class="btn btn-primary" onclick="showContent('android')">Android</button>
+          </div>
+          <div id="windowsContent" class="mt-4" style="display: none;    position: absolute;">
+            <h2 style="color: #92ff01;
+    text-shadow: -1px -1px 10px #237e52, 1px -1px 10px #237e52, -1px 1px 10px #237e52, 1px 1px 10px #237e52;">
+              Инструкция для Windows</h2>
+            <p>Для установки программы на Windows, выполните следующие шаги:</p>
+            <ol>
+              <li>Скачайте архив с программой - <a style="color: #92ff01;
+    text-shadow: -1px -1px 10px #237e52, 1px -1px 10px #237e52, -1px 1px 10px #237e52, 1px 1px 10px #237e52;"
+                  href="https://github.com/MatsuriDayo/nekoray/releases/download/3.21/nekoray-3.21-2023-09-12-windows64.zip">NekoRay</a>.
+              </li>
+              <li>Запустите клиент, следуя инструкциям на экране.Ключ доступа возьмите тут <a
+                  style="color: #92ff01;
+                  text-shadow: -1px -1px 10px #237e52, 1px -1px 10px #237e52, -1px 1px 10px #237e52, 1px 1px 10px #237e52;" href="https://rutbat.t.me">RutBat</a></li>
+            </ol>
+            <img src="img/1.png" alt="Шаг 1" class="img-fluid rounded mx-auto d-block"><br>
+            <img src="img/2.png" alt="Шаг 2" class="img-fluid rounded mx-auto d-block"><br>
+            <img src="img/3.png" alt="Шаг 3" class="img-fluid rounded mx-auto d-block"><br>
+            <img src="img/4.png" alt="Шаг 4" class="img-fluid rounded mx-auto d-block"><br>
+          </div>
+
+          <div id="androidContent" class="mt-4" style="display: none;    position: absolute;">
+            <h2 style="color: #92ff01;
+    text-shadow: -1px -1px 10px #237e52, 1px -1px 10px #237e52, -1px 1px 10px #237e52, 1px 1px 10px #237e52;">Инсрукция
+              для телефона</h2>
+            <ol>
+              <li>Скачать и установить программу <a style="color: #92ff01;
+    text-shadow: -1px -1px 10px #237e52, 1px -1px 10px #237e52, -1px 1px 10px #237e52, 1px 1px 10px #237e52;"
+                  href="https://play.google.com/store/apps/details?id=com.v2ray.ang&hl=ru">v2Ray</a></li>
+              <li>В правом верхнем углу программы нажать плюс (+).</li>
+              <li>Выбрать "Импорт профиля из буфера обмена" Ключ доступа возьмите тут <a
+                  style="color: #92ff01;
+                                text-shadow: -1px -1px 10px #237e52, 1px -1px 10px #237e52, -1px 1px 10px #237e52, 1px 1px 10px #237e52;" href="https://rutbat.t.me">RutBat</a>.</li>
+              <li>Выбрать подключение</li>
+              <li>Активировать переключатель снизу - пользоватся :)</li>
+              <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Подключение Bootstrap JS и jQuery (необходимо для Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+      function showContent(platform) {
+        // Скрыть все содержимое
+        document.getElementById('windowsContent').style.display = 'none';
+        document.getElementById('androidContent').style.display = 'none';
+
+        // Отобразить содержимое для выбранной платформы
+        const contentElement = document.getElementById(platform + 'Content');
+        contentElement.style.display = 'block';
+
+        // Прокрутить страницу к началу блока контента
+        contentElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
+    <!-- Ваш существующий код ... -->
+
+    <!-- Кнопка прокрутки вверх -->
+    <button id="scrollToTopButton" class="btn btn-primary" style="display: none;"
+      onclick="scrollToTop()">Наверх</button>
+
+  </body>
+
+</html>

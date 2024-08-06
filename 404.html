@@ -1,0 +1,312 @@
+<html lang="ru"><head>
+  <meta charset="utf-8">
+
+  <!--Кодировка страницы -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!-- <link href="css/bootstrap.min.css" async rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="css/bootstrap-formhelpers.min.css" async="" rel="stylesheet">
+  <script src="js/bootstrap-formhelpers-phone.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/pravki.css?1679159784">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap-select.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body style="background: #ffffff url(img/bg.png) repeat">
+  <div class="container-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 0 !important; padding-bottom: 0">
+      <style>
+        .animated {
+          background-position: left top;
+
+          -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeOut {
+          0% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
+        @keyframes fadeOut {
+          0% {
+            opacity: 0;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
+        .fadeOut {
+          -webkit-animation-name: fadeOut;
+          animation-name: fadeOut;
+        }
+      </style>
+
+      <style>
+        @media (max-width: 768px) {
+          .pidaras {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+
+        .wrapper {
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
+
+.typing-demo {
+  width: 22ch;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+	--delay: 0;
+	--duration: 800ms;
+	--iterations: 1;
+}
+/* •·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•·•· */
+
+
+.reveal-text,
+.reveal-text::after {
+	-webkit-animation-delay: var(--animation-delay, 2s);
+	        animation-delay: var(--animation-delay, 2s);
+	-webkit-animation-iteration-count: var(--iterations, 1);
+	        animation-iteration-count: var(--iterations, 1);
+	-webkit-animation-duration: var(--duration, 800ms);
+	        animation-duration: var(--duration, 800ms);
+	-webkit-animation-fill-mode: both;
+	        animation-fill-mode: both;
+	-webkit-animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+	        animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.reveal-text {
+	--animation-delay: var(--delay, 0);
+	--animation-duration: var(--duration, 800ms);
+	--animation-iterations: var(--iterations, 1);
+	position: relative;
+	font-size: 6vw;
+	-webkit-animation-name: clip-text;
+	        animation-name: clip-text;
+	color: #123321;
+	white-space: nowrap;
+	cursor: default
+	
+}
+
+.reveal-text::after {
+		content: "";
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #f2f98b;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		pointer-events: none;
+		-webkit-animation-name: text-revealer;
+		        animation-name: text-revealer;
+	}
+
+
+@-webkit-keyframes clip-text {
+	from {
+		-webkit-clip-path: inset(0 100% 0 0);
+		        clip-path: inset(0 100% 0 0);
+	}
+	to {
+		-webkit-clip-path: inset(0 0 0 0);
+		        clip-path: inset(0 0 0 0);
+	}
+}
+
+
+@keyframes clip-text {
+	from {
+		-webkit-clip-path: inset(0 100% 0 0);
+		        clip-path: inset(0 100% 0 0);
+	}
+	to {
+		-webkit-clip-path: inset(0 0 0 0);
+		        clip-path: inset(0 0 0 0);
+	}
+}
+
+
+@-webkit-keyframes text-revealer {
+	
+	0%, 50% {
+		transform-origin: 0 50%;
+	}
+	
+	60%, 100% {
+		transform-origin: 100% 50%;		
+	}
+
+	
+	60% {
+		transform: scaleX(1);
+	}
+	
+	100% {
+		transform: scaleX(0);
+	}
+}
+
+
+@keyframes text-revealer {
+	
+	0%, 50% {
+		transform-origin: 0 50%;
+	}
+	
+	60%, 100% {
+		transform-origin: 100% 50%;		
+	}
+
+	
+	60% {
+		transform: scaleX(1);
+	}
+	
+	100% {
+		transform: scaleX(0);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </style>
+      <div class="container" style="display: initial">
+        <div class="row">
+          <div class="col-12">
+            <a class="navbar-brand" href="/">
+              <img id="animated-example" class="pidaras animated fadeOut" height="90px" src="img/logo.webp">
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main role="main">
+      <div style="
+          min-height: calc(100vh - 9rem);
+          padding: 0 0;
+          background: #fff;
+          text-align: center;
+          /* padding: 3rem; */
+        ">
+        <div class="wrapper">
+          <div class="typing-demo">
+            Получилась хуйня((</div>
+      </div>
+        
+        <br><a href="https://ardmoney.ru">
+          <img src="img/cry.gif" style="
+width: -webkit-fill-available;
+    height: 50%;">
+        </a>
+        <br>
+        <h1 class="reveal-text">
+          Либо нет инета либо сервак помер
+        </h1>
+        <br>
+        <h1 class="reveal-text">
+          Нажми на пса что бы починить
+        </h1>
+      </div>
+    </main>
+  </div>
+  <div class="navbar-fixed-bottom bg-dark" style="margin-top: auto; margin-bottom: -1rem">
+    <div class="navbar-inner">
+      <div class="container">
+        <div style="text-align: center">
+          <small style="color: #c1c2c2">Версия сайта: Beta 3.0.0 <br>Created by
+            <a class="text-light" href="https://vk.com/rutbat">RutBat</a>
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body></html>

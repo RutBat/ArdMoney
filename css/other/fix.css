@@ -1,0 +1,14 @@
+/* Стили для блока */
+#block {
+  display: none;
+  /* Другие стили */
+}
+.hide {
+  display: none;
+}
+.single {
+  display: none;
+}
+.single.active {
+  display: block;
+}
